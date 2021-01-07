@@ -1,4 +1,4 @@
-FROM apache/airflow
+FROM apache/airflow:1.10.12-python3.6
 
 RUN pip install bs4
 
