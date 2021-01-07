@@ -1,4 +1,4 @@
-import UseSupersetApi
+from UseSupersetApi import UseSupersetApi
 import json
 import pprint
 from airflow.operators.bash_operator import BashOperator
@@ -10,7 +10,10 @@ from airflow.operators.mysql_operator import MySqlOperator
 from airflow.hooks.mysql_hook import MySqlHook
 from airflow.utils.dates import days_ago
 import logging
+import os
 
+superset_username = os.environ['SUPERSET_USERNAME']
+superset_password = os.environ['SUPERSET_PASSWORD']
 
 def insert_or_update_table(**kwargs):
     try:

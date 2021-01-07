@@ -1,11 +1,9 @@
 import requests
 import logging
+import os
 from bs4 import BeautifulSoup as bs
 
 superset_url = os.environ['SUPERSET_URL']
-superset_username = os.environ['SUPERSET_USERNAME']
-superset_password = os.environ['SUPERSET_PASSWORD']
-
 
 class UseSupersetApi:
     def __init__(self, username=None, password=None):
